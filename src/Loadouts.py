@@ -186,8 +186,14 @@ class Loadouts:
                                         socket
                                     ]["Item"]["ID"]
                                 ):
-                                    # if buddy["uuid"] == "ad508aeb-44b7-46bf-f923-959267483e78":
-                                    print(names[players[i]["Subject"]])
+                                    if (
+                                        buddy["uuid"]
+                                        == "ad508aeb-44b7-46bf-f923-959267483e78"
+                                    ):
+                                        print(
+                                            names[players[i]["Subject"]]
+                                            + "has riot buddy"
+                                        )
                                     final_json[players[i]["Subject"]]["Weapons"][
                                         skin
                                     ].update(
