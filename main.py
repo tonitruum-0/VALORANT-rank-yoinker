@@ -432,6 +432,7 @@ try:
                         player_level = player["PlayerIdentity"].get("AccountLevel")
 
                         if player["PlayerIdentity"]["Incognito"]:
+                            print(Requests.puuid + "Incognito")
                             Namecolor = colors.get_color_from_team(
                                 player["TeamID"],
                                 names[player["Subject"]],

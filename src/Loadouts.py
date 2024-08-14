@@ -192,7 +192,7 @@ class Loadouts:
                                     ):
                                         print(
                                             names[players[i]["Subject"]]
-                                            + "has riot buddy"
+                                            + " has riot buddy"
                                         )
                                     final_json[players[i]["Subject"]]["Weapons"][
                                         skin
