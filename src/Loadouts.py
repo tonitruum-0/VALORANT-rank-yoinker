@@ -146,6 +146,7 @@ class Loadouts:
                         if sockets["skin_buddy"] == socket:
                             for buddy in valoApiBuddies.json()["data"]:
                                 if buddy["uuid"] == PlayerInventory["Items"][skin]["Sockets"][socket]["Item"]["ID"]:
+                                    print("HI HELOO TESTSTTS")
                                     final_json[players[i]["Subject"]]["Weapons"][skin].update(
                                         {
                                             "buddy_displayIcon": buddy["displayIcon"]
