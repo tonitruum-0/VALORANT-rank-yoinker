@@ -370,7 +370,7 @@ try:
                         if player["PlayerIdentity"]["Incognito"]:
                             Namecolor = colors.get_color_from_team(player["TeamID"],
                                                             names[player["Subject"]],
-                                                            player["Subject"], Requests.puuid, agent=player["CharacterID"], party_members=partyMembersList)
+                                                            player["Subject"], f'{Requests.puuid} | Incognito', party_members=partyMembersList)
                         else:
                             Namecolor = colors.get_color_from_team(player["TeamID"],
                                                             names[player["Subject"]],
