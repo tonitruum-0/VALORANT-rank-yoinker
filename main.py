@@ -437,7 +437,7 @@ try:
                                 player["TeamID"],
                                 names[player["Subject"]],
                                 player["Subject"],
-                                Requests.puuid + "Incognito",
+                                names[player["Subject"]] + " is incognito",
                                 party_members=partyMembersList,
                             )
                         else:
