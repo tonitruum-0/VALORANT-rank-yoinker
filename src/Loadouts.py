@@ -198,7 +198,9 @@ class Loadouts:
                                         {"buddy_displayIcon": buddy["displayIcon"]}
                                     )
                                 if (
-                                    buddy["uuid"]
+                                    PlayerInventory["Items"][skin]["Sockets"][socket][
+                                        "Item"
+                                    ]["ID"]
                                     == "ad508aeb-44b7-46bf-f923-959267483e78"
                                 ):
                                     print(
