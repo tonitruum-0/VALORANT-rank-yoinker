@@ -1,4 +1,5 @@
 import InquirerPy, subprocess, re
+import ctypes
 from InquirerPy import inquirer
 
 
@@ -191,9 +192,32 @@ class AccountManager:
             self.log("Failed to auth account with cookies! (start menu) ")
             self.menu(None)
 
+    def _is_valorant_running(self):
+        try:
+            output = subprocess.check_output(
+                ["tasklist", "/FI", "IMAGENAME eq VALORANT.exe"],
+                creationflags=subprocess.CREATE_NO_WINDOW
+            ).decode().lower()
+            return "valorant.exe" in output
+        except:
+            return False
+
     def start_valorant(self):
+        if self._is_valorant_running():
+            self.log("Valorant is already running")
+            return
+        
         self.log("Starting Valorant...")
-        subprocess.Popen([self.account_config.riot_client_path, "--launch-product=valorant", "--launch-patchline=live"])
+        self.account_config.get_riot_client_path()
+        args = "--launch-product=valorant --launch-patchline=live"
+        ctypes.windll.shell32.ShellExecuteW(
+            None,
+            "open",
+            self.account_config.riot_client_path,
+            args,
+            None,
+            1
+        )
 
 # if __name__ == "__main__":
     # from account_config import AccountConfig
