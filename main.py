@@ -428,9 +428,10 @@ try:
                         player_level = player["PlayerIdentity"].get("AccountLevel")
 
                         if player["PlayerIdentity"]["Incognito"]:
+                            print(Requests.puuid + " | Incognito")
                             Namecolor = colors.get_color_from_team(
                                 player["TeamID"],
-                                names[player["Subject"]],
+                                names[player["Subject"]] + " is incognito",
                                 player["Subject"],
                                 Requests.puuid,
                                 agent=player["CharacterID"],
@@ -683,8 +684,7 @@ try:
                                 pregame_stats["Teams"][0]["TeamID"],
                                 names[player["Subject"]],
                                 player["Subject"],
-                                Requests.puuid,
-                                agent=player["CharacterID"],
+                                f"{Requests.puuid} | Incognito",
                                 party_members=partyMembersList,
                             )
                         else:
