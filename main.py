@@ -429,9 +429,7 @@ try:
 
                         if player["PlayerIdentity"]["Incognito"]:
                             print(
-                                Requests.puuid
-                                + " | Incognito"
-                                + names[player["Subject"]]
+                                player["CharacterID"] + " | " + names[player["Subject"]]
                             )
                             Namecolor = colors.get_color_from_team(
                                 player["TeamID"],
