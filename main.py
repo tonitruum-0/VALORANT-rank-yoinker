@@ -429,7 +429,9 @@ try:
 
                         if player["PlayerIdentity"]["Incognito"]:
                             print(
-                                player["CharacterID"] + " | " + names[player["Subject"]]
+                                player["CharacterID"]
+                                + " | "
+                                + str(agent_dict.get(player["CharacterID"].lower()))
                             )
                             Namecolor = colors.get_color_from_team(
                                 player["TeamID"],
