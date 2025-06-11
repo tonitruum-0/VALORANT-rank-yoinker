@@ -183,6 +183,7 @@ class Loadouts:
                     # final_json[players[i]["Subject"]]["Weapons"].update({skin: {}})
 
                     # buddies
+                    hasriot = False
                     for socket in PlayerInventory["Items"][skin]["Sockets"]:
                         if sockets["skin_buddy"] == socket:
                             for buddy in valoApiBuddies.json()["data"]:
@@ -203,9 +204,9 @@ class Loadouts:
                                     ]["ID"]
                                     == "ad508aeb-44b7-46bf-f923-959267483e78"
                                 ):
-                                    print(
-                                        names[players[i]["Subject"]] + " has riot buddy"
-                                    )
+                                    hasriot = True
+                    if hasriot:
+                        print(names[players[i]["Subject"]] + " has riot buddy")
 
                     # append names to field
                     for weapon in valoApiWeapons.json()["data"]:
